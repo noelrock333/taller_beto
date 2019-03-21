@@ -4,6 +4,7 @@ import './css/login.css';
 import './App.css';
 import 'antd/dist/antd.css';
 import Auth from './services/auth';
+import { Link } from 'react-router-dom';
 
 class App extends Component {
   state = {
@@ -47,6 +48,7 @@ class App extends Component {
               </Button>
             </Form.Item>
           </Form>
+          <Link to="/beto">Ir al componente de beto</Link>
           <span>{process.env.REACT_APP_LOGIN_SERVICE_URL}</span>
         </header>
       </div>
