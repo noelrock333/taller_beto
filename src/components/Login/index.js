@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Form, Icon, Input, Button } from 'antd';
-import './css/login.css';
-import './App.css';
+import '../../css/login.css';
+import '../../App.css';
 import 'antd/dist/antd.css';
-import Auth from './services/auth';
+import Auth from '../../services/auth';
 import { Link } from 'react-router-dom';
 
 class App extends Component {
@@ -19,6 +19,10 @@ class App extends Component {
         Auth.login({ user: values.userName, password: values.password });
       }
     });
+  }
+
+  login = () => {
+    localStorage.setItem('jwt', 'dasdasdasdasdas');
   }
 
   render() {
@@ -43,7 +47,7 @@ class App extends Component {
               )}
             </Form.Item>
             <Form.Item>
-              <Button type="primary" htmlType="submit" className="login-form-button">
+              <Button type="primary" htmlType="submit" className="login-form-button" login={this.login}>
                 Log in
               </Button>
             </Form.Item>
